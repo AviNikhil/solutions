@@ -1,0 +1,94 @@
+Spring core___________
+>>Constructors
+>>functions
+>>dependancy injection
+>>configuration === xml,json,javaclass,propertiee,anotations..
+but in spring configuration is done by xml,java based configuration,annotations.
+______________________________
+xml drwbacks
+..xml are heavyweight.
+..more time for parsing.
+..impact on performance.
+=========depency injection done by dependencyinjection container
+lifecycle==lifecycle methods---for this we need to download the spring container.
+
+Spring container is called --ioc container(ioc=inversion of controlcontainer).
+>>collections supported by spring are list,map and
+______>>Singleton is a scope....and default scope in spring is singleton.
+
+proceess of creating project structure is called scaffoldind........
+____________________________________________________________________________
+In settings.xml:
+Proxy information: proxy server ipaddress,portno,username,password
+common dependencies info
+corporate repo info: repo ipaddress,portno,username,password
+plugin info...etc
+
+ 
+____________________________________________________________________________
+ 
+
+1)Create a Maven project.
+2)Add spring dependencies to pom.xml.
+3)clean install the maven: under goals: clean install
+4)create a java package and a new bean class
+5)create a applicationcontext.xml file under source/resources
+6)fill the xml files as per the requirements.
+<bean id="ab" class="">
+<property name="aa" value=22/>
+</bean>
+7)create testclass or main class
+8)initiate IOC container in mainclass using "ClassPathXMLApplicationcontext"
+9)get the bean and call the required getter methods
+10)container shld be shutdowned for which we are calling "shutdownhook".
+
+________________________________________________
+Spring official document........
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html#%3Cinit%3E(java.lang.String)
+
+
+_____________________________________________________
+bussiness logic should not write in bean class and try caych block
+
+===============================================
+
+
+
+
+
+
+1)Client requests for a page by specifying the Web URL for the page. E.g. https://skolaparthi.com
+
+2)Client request is intercepted by the Dispatcher Servlet also known as Front Controller. Dispatcher Servlet is a servlet specified in Web.XML file (for XML Based configurations) or in the Web Configuration class (for java based configurations).
+
+3)Dispatcher Servlet uses URL Mapping Handler to find out the relevant controller class to which request should be passed for subsequent processing. For example, If you have a Controller defined for all requests by specifying “/” in the URL, all requests will be entertained by that controller.
+
+4)Once Dispatcher Servlet has identified the Controller to be considered, it passes the client request to the controller.
+
+5)The controller class is the main class controlling the business logic flow once request has been dispatched it it by dispatcher servlet. This class will implement the methods for different type of http requests (e.g. GET, POST) and all logic to call Service layer methods will reside in this controller class.
+
+6)The controller class will also be responsible for returning the ModelAndView object back to the dispatcher servlet after getting all business logic executed and any data returned from DAO layer. ModelAndView object returned by the controller back to the controller specified both view and model objects.
+
+ 
+
+Controller class is annotated by @Controller annotation.
+
+ 
+
+7)After receiving ModelAndView object from the controller, Dispatcher Servlet now sends model object to view resolver to get the name of the view which needs to be rendered.
+
+8)Once the view to be rendered has been identified, Dispatcher Servlet passes model object to the view. Model object contains the data which needs to be displayed in the view. View will be rendered with the model data. Views can be designed in any front-end technology.
+
+9)This view is returned to the client and client can see the view and associated data on his browser.
+
+
+=========================================================
+spring combinations ......
+
+>> spring mvc + hibernate+junit+log4j
+>> spring mvc + hibernate+jsp+connectionpooling(serverside)
+>>springboot+hibernet
+>>springboot+thykeaf+hibernate
+>>spring mvc +thyleaf+junit+log4j
+

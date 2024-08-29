@@ -1,0 +1,124 @@
+>>>>>HIKARI TEST.
+
+public class HikariCPTest {
+	private static DataSource datasource = null;
+
+	public static DataSource getDataSource() {
+		if (datasource == null) {
+			HikariConfig config = new HikariConfig();
+			// config.setDriverClassName("");
+			config.setJdbcUrl("jdbc:mysql://localhost:3306/training");
+			config.setUsername("root");
+			config.setPassword("mysql123@");
+			config.setMaximumPoolSize(10);
+			config.setAutoCommit(false);
+			config.addDataSourceProperty("cachePrepStmts", "true");
+			config.addDataSourceProperty("prepStmtCacheSize", 250);
+			config.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
+			datasource = new HikariDataSource(config);
+		}
+		return datasource;
+	}
+
+	public static void main(String args[]){
+	 Connection conn = null;
+	 PreparedStatement ps= null;
+	 ResultSet res = null;
+	 try{
+		 DataSource datasource = HikariCPTest.getDataSource();
+		 conn = datasource.getConnection();
+		 ps = conn.prepareStatement("select*from Lenovo");
+		 System.out.println("The connection object is of class" +conn.getClass());
+		 res = ps.executeQuery();
+		 while(res.next()){
+			 System.out.println(res.getString(1) +res.getString(2) +res.getString(3) +res.getString(4));
+			 
+		 }
+		
+		 }catch(Exception e){
+			 System.out.println(e);
+		 }
+	 
+ }
+
+}
+
+-----------------------------------------------------------------------------------------------------
+>>.SPRING  JDBC...
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/training" />
+		<property name="username" value="root" />
+		<property name="password" value="mysql123@" />
+	</bean>
+	<bean id="empDaoImpl" class="com.infinite.dao.EmployeeDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>
+
+---------------------------------------------------------------------
+>>LOG4J
+
+public class Log4jTesting {
+	
+	private static final Logger logger = Logger.getLogger(Log4jTesting.class);
+	
+	{
+		logger.info("unamed block");
+	}
+	public static void display(){
+		
+		try{
+			int i= 1/0;
+		}catch(Exception e){
+			logger.error("Hi from non display");
+		}
+		
+	}
+	
+	public void displaynonstatic(){
+		logger.info("Hi hello world");
+	}
+     public static void main(String args[]){
+    	 PropertyConfigurator.configure("log4j.properties");
+         
+    	Log4jTesting.display();
+    	Log4jTesting obj = new Log4jTesting();
+    	obj.displaynonstatic();
+     
+     }
+}
+--------------------------------------------------------------
+>>LOG4J PROPERTIES
+
+//log4j.appender.FILE.File=${log}/log.out
+log4j.rootLogger=DEBUG,FILE,console
+// Set the appender named X to be a File appender
+log4j.appender.FILE=org.apache.log4j.FileAppender
+log4j.appender.FILE.File=D:\\logs\\jbackend.log
+//log4j.appender.FILE.File=${log}/log.out
+log4j.appender.file.MaxFileSize=1MB
+log4j.appender.file.MaxBackupIndex=1
+// Define the layout for X appender
+log4j.appender.FILE.layout=org.apache.log4j.PatternLayout
+log4j.appender.FILE.layout.conversionPattern= %d %L[%t] %-5p %c %x - %m%n
+
+ 
+
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%L %d[%t] %-5p %c %x - %m%n
+
+-----------------------------------------------------------------------------------------

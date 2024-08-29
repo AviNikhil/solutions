@@ -1,0 +1,20 @@
+Running/Deployment------Docker,Kubernates,openshift
+Code Quality testing-------SonarQube,PMD
+Databases------RDBMS db or No SQL dbs
+Logging---------Loggly,AWS log feature,ELK Stack,Splunk,Sentry server
+Monitoring----New Relic/Appdynamics
+Cloud---AWS/Heroku/Azure/GCP/Alibaba/PCF
+Code repository----Git/Github/bitbucket/Gitlab
+Testing----Junit
+CI/CD tool----Jenkins/Teamcity
+Issue Traxcking--Jira/Service Now
+Dependency Management----Maven,Gradle
+Global Dashboards----SpringBoot Admin Dashboard
+Lookup----Eureka/PCF/Netflix 3rd party servers
+corporate repo--jfrog,sonatype
+documentation-swagger
+api designining--swagger/open api,mulesoftm raml
+integration--apache camel or mulesoft or tibco esb
+broswser compatablility testing--selenium
+load testing/db testing/webservice testing-jmeter
+technologies--springboot,springcloud

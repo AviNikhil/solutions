@@ -1,0 +1,17 @@
+@Controller -> Classes annotated with this, are intended to receive a request from the client side. The first request comes to the Dispatcher Servlet,
+ from where it passes the request to the particular controller using the value of @RequestMapping annotation.
+@Service -> Classes annotated with this, are intended to manipulate data, that we receive from the client or fetch from the database. All the manipulation 
+with data should be done in this layer.
+@Repository -> Classes annotated with this, are intended to connect with database. It can also be considered as DAO(Data Access Object) layer.
+ This layer should be restricted to CRUD (create, retrieve, update, delete) operations only. If any manipulation is required, data should be sent be
+ send back to @Service layer.
+
+-------------------------------------------------
+
+@springbootapplication= @configuration + @enableautoconfiguration +@componentscan - xml congiguration
+
+
+================================================================
+
+Postman is also called agent/RestAgent
+HalBrowser

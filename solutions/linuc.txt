@@ -1,0 +1,297 @@
+                    >>>>>>LINUX COMMANDS<<<<<<<<<<
+
+1.CAT COMMAND:
+
+**to View the Content of a Single File in Linux
+    Syntax:  cat file_name
+
+**to View the Content of Multiple Files in Linux
+    Syntax:  cat file_name1 file_name2
+
+**to numbering each line in file we use
+    syntax:  cat -n file_name
+
+**to Create a file and add content in Linux Using `cat` Command:
+        Syntax: cat > filename  (we can write content here)
+
+**to Copy the Contents of One File to Another File in Linux or 
+  to concatenate two or more files:
+        syntax: cat t1.txt  t2.txt>concat.txt (concat)
+                cat t1.txt>t2.txt (conntent copy)
+
+**Cat command can suppress repeated empty lines in output 
+        cat -s file_name
+
+**to Append the Contents of One File to the End of Another File 
+         Syntax: cat file_name1 >> file_name2 (>>)
+
+**to Display Content in Reverse Order Using `tac` Command in Linux 
+         Syntax: tac file_name
+
+** to Highlight the End of Line in Linux 
+      Syntax:  cat -E "filename"
+
+**cat command that used to numbering only non-empty lines
+     synax : cat -b t1.txt
+     
+** Cat command if the file has a lot of content and can’t fit in the terminal. 
+    Syntax:  cat "filename" | more
+    Will show that much content, which could fit in terminal and will ask to show more.
+    
+**To display the content of all text files in a folder, use the wildcard (‘*.txt’):
+    Syntax: cat *.txt
+  
+**To append text to an existing file, use the ‘>>’ operator along with ‘cat’:
+    Syntax: cat >> geeks.txt
+
+=====================================================================================================
+2. ls COMMAND:
+
+**command that lists directory contents of files and directories : ls
+**Display One File Per Line Using : ls -1 
+**Display All Information About Files/Directories Using : ls -l
+** Display File Size in Human Readable Format Using : ls -lh
+**Display Directory Information Using :ls -ld
+** Display Hidden Files Using ls -a (or) ls -A 
+======================================================================================================
+3. pwd COMMAND
+**The ‘pwd,’ which stands for “print working directory.” it
+is used to find the current location of working directory
+======================================================================================================
+4. mkdir COMMAND
+**this command used to create the directory in terminal 
+   syntax: mkdir direc
+======================================================================================================
+5.rmdir COMMAND
+**this command used to delete the directory in terminal
+  syntax: rmdir direc name
+
+**the -p option with the rmdir command to delete a directory, including all the subdirectories:
+
+  syntax :   rmdir -p mydir1/mydir2/mydir3/...../mydirN
+======================================================================================================
+6. cd COMMAND
+**this command used to change the directory path
+======================================================================================================
+7. cp COMMAND
+**Copying Between Two Files in Linux
+   syntax : cp sourcefile.txt desti.txt
+ 
+**Copy files to a Directory in Linux
+  syntax: cp filename <directory path where it should be copied>
+  
+**Copying Files Between Two Directories in Linux
+  syntax : cp -R Src_directory Dest_directory
+ 
+**Copy a File in Linux Using `-i` Option
+  -i option initiates a interactive copy that
+  ask permission to ovewrite content in destifile.
+  syntax: cp -i source_file destination_file
+  
+ ** Copy a File in Linux Using `-f` Option
+     If the system is unable to open destination file for writing operation
+     because the user doesn’t have writing permission for this file 
+     then by using -f option with cp command
+     syntax : cp -f f1.txt f2.txt
+============================================================================================
+8.  mv COMMAND
+**Two Distinct Functions of `mv` Command
+
+    1) Renaming a file or directory.
+    2) Moving a file or directory to another location.
+
+**to Rename a file in Linux Using `mv` Command
+   syntax: mv filename.txt  rename.txt
+
+**to Move a File in Linux Using `mv` Command 
+  syntax: mv sourcefile <directory path>
+==========================================================================================
+9. rm COMMAND
+**generally used to delete the files created in the directory.
+ syntax: rm filename
+
+**Like in cp, the -i option makes the command ask the user for confirmation before removing each file, 
+you have to press y for confirm deletion, any other key leaves the file un-deleted.
+  syntax: rm -i f1.tt
+**rm prompts for confirmation removal if a file is write protected. 
+The -f option overrides this minor protection and removes the file forcefully.
+  syntax : rm -f f1.txt
+===============================================================================
+
+  
+10. uname COMMAND
+**used to check the complete OS information of the system. 
+
+**to Displays all available information.
+  syntax : uname -a or uname --all
+
+**to Shows the kernel release.
+  syntax : uname -r
+
+**to Shows the kernel version.
+  syntax : uname -v
+
+**to Shows the hardware platform or “unknown.”
+  syntax : uname -i
+** to show os information.
+  syntax : uname -o
+=================================================================================
+11. touch COMMAND
+**to Create an Empty Files by Using Touch Command in Linux
+  syntax : touch f.txt
+
+**to Create Multiple Empty Files
+  syntax : touch f1.txt f2.txt ...
+**`-c` ,`-d` option in `touch` Command,This is used to update access and modification time.
+    syntax: touch -c -d "sep 12" filename
+==================================================================================================
+12. clear COMMAND
+**is a standard command to clear the terminal screen.
+
+==================================================================================================
+13. ps COMMAND
+**The `ps` Command to List Running Processes in Linux.
+**Result contains four columns of information. Where, 
+
+PID – the unique process ID 
+TTY – terminal type that the user is logged into 
+TIME – amount of CPU in minutes and seconds that the process has been running 
+CMD – name of the command that launched the process
+
+**View All Running Processes in Linux.
+  syntax: ps -A or ps -e
+====================================================================================================
+14. man COMMAND
+**displays a user manual for any commands or utilities available in the Terminal, including their name,
+ description, and options.
+   syntax : man <command name>
+=========================================================================================================
+15. grep COMMAND
+**The grep filter searches a file for a particular pattern of characters and
+ displays all lines that contain that pattern.
+ syntax : cat f1.txt | grep "wordname"
+
+**The -i option enables to search for a string case insensitively in the given file.
+ It matches the words like “UNIX”, “Unix”, “unix”.
+  syntax : grep -i "UNix" geekfile.txt
+
+**Displaying the count of number of matches
+   syntax : grep -c "unix" file.txt
+===========================================================================================================
+16. echo COMMAND
+** in Linux is specially used to print something in the terminal.
+============================================================================================================
+17. wget COMMAND
+**in the Linux command line allows you to download files from the internet.
+ It runs in the background and does not interfere with other processes. 
+   syntax : wget [options]http://sample.com/sample-menu.php
+===========================================================================================================
+18.whoami COMMAND
+** to Display the current Username in Linux 
+===========================================================================================================
+19. sort COMMAND
+**The sort command is used generally to sort the output of the file.
+   syntax:  sort file name
+it sorts in alphabetical order.
+==============================================================================================================
+20. cal COMMAND
+** it functions to view the calendar for a particular month in the terminal.
+=============================================================================================================
+21. whereis COMMAND
+**whereis command is used to find the location of 
+source/binary file of a command and manuals sections for a specified file in Linux system.
+=============================================================================================================
+22. df COMMAND
+**gets the details of the file system.
+
+**Includes pseudo, duplicate, and inaccessible file systems in the output.
+  syntax : df -a or df --all
+
+**Scales sizes by SIZE before printing them.
+  syntax: df -BM
+
+**to display pirticular file info
+  syntax: df <filename>
+=============================================================================================================
+23. wc COMMAND
+**It Linux indicates the number of words, characters, lines, etc using a set of options.
+  syntax: wc <filename>
+
+**wc -w shows the number of words
+**wc -l shows the number of lines
+**wc -m shows the number of characters present in a file  
+===============================================================================================================
+24. less COMMAND
+**Linux command to display paged outputs in the terminal
+**The less command doesn’t load the entire file but loads it part by part which makes it faster.
+   syntax: cat <file name> | less
+
+**Start at the first occurrence of the specified pattern in the file  -p.
+  syntax: cat <f.txt |less -p "pattern_word" 
+==============================================================================================================
+25. more COMMAND
+**The more command also allows the user do scroll up and down through the page. 
+  syntax: more filename
+**cat filename | more
+==================================================================================================================
+26. tar COMMAND
+**This command creates a tar file called file.tar which is the Archive of all .c files in the current directory. 
+  syntax: tar cvf filename.tar *.c (.extention)
+
+**Extracting files from Archive using option -xvf
+  syntax : tar xvf file.tar
+=================================================================================================================
+27. head COMMAND
+**The head command, as the name implies, print the top N number of data of the given input.
+ By default, it prints the first 10 lines of the specified files.
+  syntax: head <f1.txt>
+
+**-n num: Prints the first ‘num’ lines instead of first 10 lines. num is mandatory 
+to be specified in command otherwise it displays an error.
+  syntax: head -n 25 <f1.txt> (25-number lines it print)
+================================================================================================================ 
+28. tail COMMAND
+** The tail command, as the name implies, prints the last N number of data of the given input.
+ By default, it prints the last 10 lines of the specified files.
+  syntax: tail <file.txt>
+
+****-n num: Prints the first ‘num’ lines instead of last 10 lines. num is mandatory 
+to be specified in command otherwise it displays an error.
+  syntax: tail -n 34 f1.txt
+==================================================================================================================
+29. diff COMMAND
+** to Compare Files Line by Line in Linux 
+   syntax: diff f1.txt f2.txt
+==================================================================================================================
+30. cmp COMMAND
+**cmp command in Linux/UNIX is used to compare the two files byte by byte and
+ helps you to find out whether the two files are identical or not.
+syntax: cmp <f1.txt> <f2.txt>
+
+output as:
+file1.txt file2.txt differ: byte 9, line 2
+
+ /*indicating that the first mismatch found in
+ two files at byte 20 in second line*/
+====================================================================================================================
+31. export COMMAND
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

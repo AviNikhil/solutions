@@ -1,0 +1,80 @@
+**PROMPT ENGINEERING:
+
+>PROMPTis nothing but a detailed guidelines or instruction given to an llm or gen model to do a task.
+
+>It is a iteravtive process to develop a task-specific prompt to get good or near-perfect response.
+
+===================================================================================================================
+                                     PROMPTS
+                         ---------------|----------------------
+                   Parameters						    Structure
+				  eg:temperature,                      context with guidlines
+				     Top P
+		
+		
+===================================================================================================================
+>>COMPONENTS OF GOOD PROMPTS:
+
+1. CONTEXT: Additional info or context to get better response.
+
+2. INSTRUCTIONS: A specific task related guildlines to given to model to perform on it.
+
+*INPUT DATA : The data that is give as input to find some response from it.
+
+*OUTPUT INDICATOR : TO intimate the format of output like json,csv or tabular form to model or it tells 
+                     model to get output for required thing eg: just give me either sentence is positive or negative.
+
+=====================================================================================================================
+
+>>HOW TO WRITE A GOOD PROMPT:
+#HERE ARE CHECKLIST , TO CREATE EFFECTIVE PROMPTS:
+
+**DEFINE A GOAL: tell llm or model what exactly you want from it.
+
+**DETAIL OF THE FORMAT : specify the format that you want output eg:tabular, csv , json etc.
+
+**CREATE A ROLE: Assign a role to model to let it process your request in that point of view.
+                   
+				   eg: ACT as Python Developer, Act as XXXX.
+
+**CLARIFY THE WHO THE AUDIENCE IS: Specify the demographics for model to help it tailor its response appropiatly.
+
+**GIVE CONTEXT:  Provide the info to model so that it can get the purpose of request and helps model as it makes as   
+                  an additional info to input data.
+				  
+**GIVE EXAMPLES: Giving example helps to learn and understand the requirement and can get accurate response.
+
+**SPECIFY THE STYLE : Outline the tone, communication style and other details in prompt.
+
+**DEFINE THE SCOPE : Besides giving context and example, outling the scope specification which helps model to operate within those parameters.
+
+**APPLY RESTRICTIONS : creating a right boundaries by certain restrictions applied, helps model to get more relevant response.
+
+=============================================================================================================================================
+>>DIFFERENT PROMPT PATTERNS:
+
+1. PERSONA PATTERN :
+--------------------
+ACT as X, do the task Y.
+eg: ACT as Python Developer, create a beginner level road-map to learn python with ML.
+
+2. AUDIENCE PERSONA PATTERN :
+------------------------------
+Explain x to me, Asuume I'm Y.
+eg: create the beginner level road-map to learn python with ML, Asssume me like a graduation student.
+
+
+>>>>1st one is where model acts as X person and gives response with that point of view, whereas 2nd is
+    requesting model to do a task Y , if a person is X or Assume I am X person.here giving level of person
+	understands to generated context and provide data according to person level.
+	
+3.VISUALIZATION GENERATOR PATTERN:
+-----------------------------------
+Generate X that can provide to tool Y for visualization
+eg: generate records containing column(a,b) that can insert to mysql table and provide such records for count of 5.
+
+>>here it just creating a new data that can be used for other tool or purpose.
+
+
+
+				  

@@ -1,0 +1,387 @@
+>>>>Linux Commands
+* All basic and advanced tasks can be done by executing commands.
+* Commands in Linux are case-sensitive.
+>> Linux Directory Commands.
+1. pwd   - used to find the current location of
+             working directory.
+2. mkdir - it is used to create the directory.
+3. rmdir - it is used to delete the existing 
+            directory.
+4. ls    - it is used to display the list of content 
+           of the directory.
+5. cd    - it is used to change the current directory.
+------------------------------------------------------------
+>>>>> Linux File commands.
+6. touch - it is used to create the empty files.We can create 
+           multiple empty files by executing it once.
+7. cat   - It can be used to create a file, display content of 
+           the file, copy the content of one file to another file,
+           and more.
+           * ctrl + d to save file from terminal.
+8. rm     - The rm command is used to remove a file.
+9. cp     - The cp command is used to copy a file or directory.
+             cp <existing file name> <new file name> .
+10. mv     -  The mv command is used to move a file or a directory
+             form one location to another location.
+                 mv <file name> <directory path>
+            ** rename a file by mv cmd- mv<f1><f2> 
+----------------------------------------------------------------
+>>>> Linux File Content Commands.
+11.head    - The head command is used to display the content of a file.
+              It displays the first 10 lines of a file.
+12.tail    -  it displays the last ten lines of the file content. 
+13. tac    -  The tac command is the reverse of cat command, as its name specified.
+              It displays the file content in reverse order (from the last line).
+14. more   -  The more command is quite similar to the cat command, as it is used
+               to display the file content in the same way that the cat command does.
+              The only difference between both commands is that, in case of larger files,
+               the more command displays screenful output at a time.
+15. less   - The less command is similar to the more command. It also includes some extra features 
+             such as 'adjustment in width and height of the terminal.
+----------------------------------------------------------------------
+
+>>>>Linux User Commands.
+16. su     - The su command provides administrative access to another user.
+17. id     - The id command is used to display the user ID (UID) and group ID (GID).
+18. useradd - used to add or remove a user. useradd.
+19. passwd  -  The passwd command is used to create and change the password for a user.
+20. groupadd - The groupadd command is used to create a user group.
+                 sudo groupadd <name>
+--------------------------------------------------------------------------
+>>>>>Linux Filter Commands.
+
+21. cat   - The cat command is also used as a filter. To filter a file, it is used inside pipes.
+              cat <fileName> | cat or tac | cat or tac |. . .   
+22. cut   - The cut command is used to select a specific column of a file. The '-d' option is used 
+            as a delimiter, and it can be a space (' '), a slash (/), a hyphen (-), or anything else.
+            And, the '-f' option is used to specify a column number.
+               cut -d(delimiter) -f(columnNumber) <fileName>
+23. grep  -The grep is the most powerful and used filter in a Linux system. The 'grep' stands for "global regular expression print."
+           It is useful for searching the content from a file.
+           Generally, it is used with the pipe. 
+24. comm  - The 'comm' command is used to compare two files or streams.
+25. sed -  The sed command is also known as stream editor. It is used to edit files using a regular expression.
+26. tr  - The tr command is used to translate the file content like from lower case to upper case.
+27. uniq - The uniq command is used to form a sorted list in which every word will occur only once.
+28. wc - The wc command is used to count the lines, words, and characters in a file.
+29. od - The od command is used to display the content of a file in different s, such as hexadecimal, octal, and ASCII characters.
+            od -b <fileName>      // Octal format  
+            od -t x1 <fileName>   // Hexa decimal format  
+            od -c <fileName>     // ASCII character format  
+30. sort - The sort command is used to sort files in alphabetical order.
+31. gzip - The gzip command is used to truncate the file size. It is a compressing tool. It replaces 
+           the original file by the compressed file having '.gz' extension.
+32. gunzip - The gunzip command is used to decompress a file. It is a reverse operation of gzip command.
+
+-------------------------------------------------------------------------------
+>>>>>>>Linux Utility Commands
+
+33.find - The find command is used to find a particular file within a directory. It also supports various options to find a file such as byname, by type, by date, and more.
+
+The following symbols are used after the find command:
+
+(.) : For current directory name
+
+(/) : For root
+
+34.locate -The locate command is used to search a file by file name
+  locate <filename>
+
+35. date - The date command is used to display date, time, time zone, and more.
+36. cal -The cal command is used to display the current month's calendar with the current date highlighted.
+37. sleep - The sleep command is used to hold the terminal by the specified amount of time. By default, it takes time in seconds.
+38. time -The time command is used to display the time to execute a command.
+39. zcat -The zcat command is used to display the compressed files.
+40. df - The df command is used to display the disk space used in the file system.
+41. mount- The mount command is used to connect an external device file system to the system's file system.
+42.exit - Linux exit command is used to exit from the current shell.
+43. df - it is used to check the disk space of a system.
+44.df -H  --The -H option show sizes in powers of 1000...
+45.dpkg -l <packagename> --to know that a particular pakage is installed or not.
+46.nano/vi  ------text editors for creating or editing files.
+                       nano file_name
+                       vi file_name
+47.echo  ---------- display a message or enable/disable the echoing of commands.
+48. chmod     -- change file permissions
+                       chmod permissions file_name
+49.chown   ---- change file Owner and group
+                   chown owner:group file_name
+50.ps     ----Display about running processes.
+51.kill ----Terminate a process.
+                  kill process_id
+52.top/htop      -----------Display system information and running processes.
+53. du    ----display directory space usage.
+54. uname ---- display system information
+              uname -a
+55. ifconfig/ip --- display network configuration
+                   ifconfig
+                    ip a
+56.ping      ----Test network connectivity
+                  ping domain_name
+57.traceroute   ----Display the route that packets take to reach a destination
+                           traceroute domain_name
+58.wget/curl -- Download files from the internet.
+                        wget url
+                         curl -O url
+
+59.tar          ---- Create or extract compressed archives.
+                        tar -czvf archive_name.tar.gz directory_to_compress
+                         tar -xzvf archive_name.tar.gz
+60..psql/mysql        ---- Command-line interface for PostgreSQL/MySQL databases.
+                         psql -U username -d database_name
+                         mysql -u username -p
+61.scp        ----- Securely copy files between computers.
+                    scp file_name username@remote_host:/path/to/destination
+62.ssh      ------ Connect to a remote server securely.
+                           ssh username@remote_host
+63.history  -------Display command history.
+64.uptime  -------Display system uptime.
+65.shutdown/reboot    ---- Shutdown or restart the system
+                     shutdown -h now
+                             reboot
+66.whoami ----Display the current username.
+67.Lsusb ------display information about USB devices.
+68.lspci     --------display information about PCI devices.
+
+
+---------------------------------------------------------------------------------
+>>>>>>>>command for managing all the applications, install, update , uninstall using apt.
+
+****sudo apt update — Update the local package index with the latest information from the repositories.
+****sudo apt install [package] — Install a new package.
+****sudo apt remove [package] /apt-get purge — Uninstall a package.
+****sudo apt upgrade — Upgrade all packages to their latest available versions.
+****sudo apt autoremove — Remove all packages that were installed automatically as dependencies and are no longer required.
+
+**** apt list --installed  -to know the installed packages in linux.
+**** sudo apt remove packagename -to uninstall/or remove package in linux.
+**** sudo dpkg --list | grep <software_name>  ----to know the ictalled software.
+****sudo apt-get –f install/sudo apt-get --fix-broken install ----Using the apt-get –f install or apt-get --fix-broken install Command to Fix Software Packages
+--------------------------------------------------------------------------
+>>>TO SEND EMAIL THROUGH LINUX COMMAND
+
+In this article, you will learn how to send emails using the popular mail commands. 
+It’s equally important that you also learn how to send Linux email attachments. 
+Some of the command line options used are:
+
+-s: denotes the mail’s subject
+-a: for denoting attachment
+-c: for the copy email address (CC)
+-b: for the blind copy email address (BCC)
+
+Linux Send Email from Command Line
+We will learn about following commands to send emails in Linux.
+
+mail
+mailx
+mutt
+mpack
+sendmail
+
+========================================================================
+Text Processing in linux
+
+Command	Description	                                    Examples
+-------------------------------------------------------------------------------------
+cat	Concatenate and display files	                    cat file1.txt file2.txt
+-------------------------------------------------------------------------------------
+sort	Sort lines of text files	                    sort file.txt
+-------------------------------------------------------------------------------------
+uniq	Remove duplicate lines from a sorted file	    sort file.txt | uniq
+         -d print only duplicate lines
+         -c prefix count to occurrences 
+        -u print only unique lines
+-----------------------------------------------------------------------------------------
+grep	Search for patterns in files	                    grep "pattern" file.txt
+-----------------------------------------------------------------------------------------
+cut	Extract columns of text from files	            cut -f1,3 file.txt
+-----------------------------------------------------------------------------------------
+sed	Stream editor for filtering and transforming text   sed 's/old/new/' file.txt
+--------------------------------------------------------------------------------------------
+awk	Pattern scanning and processing language	    awk '{print $1, $3}' file.txt
+---------------------------------------------------------------------------------------------
+tr	Translate or delete characters	                    tr 'a-z' 'A-Z' < file.txt
+---------------------------------------------------------------------------------------------
+wc	Count lines, words, and characters in a file	    wc file.txt
+---------------------------------------------------------------------------------------------
+diff	Compare two files and show differences	            diff file1.txt file2.txt
+----------------------------------------------------------------------------------------------
+patch	Apply a diff file to a file or directory	    patch file.txt patch.diff
+----------------------------------------------------------------------------------------------
+nl	Number lines in a file	                            nl file.txt
+---------------------------------------------------------------------------------------------
+head	Display the first few lines of a file	            head file.txt
+-----------------------------------------------------------------------------------------------
+tail	Display the last few lines of a file	            tail file.txt
+-------------------------------------------------------------------------------------------------
+tee	Redirect output to a file and to the terminal	    ls | tee output.txt
+----------------------------------------------------------------------------------------------------
+fmt	Format text files for printing	                    fmt file.txt
+-----------------------------------------------------------------------------------------------------
+pr	Convert text files for printing	                    pr file.txt
+--------------------------------------------------------------------------------------------------
+iconv	Convert character encoding of a file	            iconv -f utf-8 -t iso-8859-1 file.txt
+---------------------------------------------------------------------------------------------------
+dos2unix Convert DOS line endings to UNIX line endings	    dos2unix file.txt
+----------------------------------------------------------------------------------------------------
+rev	Reverse lines of a file	                            rev file.txt
+-----------------------------------------------------------------------------------------------------
+fold	Wrap lines of text to a specified width	            fold -w 80 file.txt
+--------------------------------------------------------------------------------------------------------
+join	Join lines from two files based on a common field   join file1.txt file2.txt
+
+
+==============================================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>gmail app password: qfwh hdir aekf zdqy
+
+Twitter Developer Account ID:
+
+Client Id : R0JrM3JURWR3dlZXNzFLWWNYMG86MTpjaQ
+Client Server : iM108Ql2XDXayYydG-6-HC3DXydVlRzvEq_Zra_nYZIX0oRD42
+Client Secreate : iM108Ql2XDXayYydG-6-HC3DXydVlRzvEq_Zra_nYZIX0oRD42
+
+Consumer/API KEY : GYQysYUxLJ3s4M7z5mmfP4bSR
+Consumer/API KEY SCreate : fmstUySOCBa4ydf0FevabAo0IirSw5cuvwU9Wauor29pq4kJf3
+
+Access token : 1737370553097613312-sqFASvybIGmuDL1RrHdt8fS4Y0Dp17
+Access token Screate : 7yFVtfLkk0PRExemVYgy4vomDddiWsGgyqDkcxEYbvOd1
+
+==================================================================================================
+>>>>>>>ls and cd command with code snipts.
+
+The cd and ls commands in Linux (including Ubuntu) are part of the shell, and their implementations are not written in Python or a high-level language
+ but rather in C or another low-level language. However, I can give you an overview of how they work conceptually:
+
+>>>>>>cd Command:
+
+The cd command is used to change the current working directory in a shell.
+When you type cd followed by a directory path, the shell's built-in cd command will attempt to change the directory to the specified path.
+Here's a simplified explanation of the cd command's functionality:
+
+int cd(const char *path) {
+    if (chdir(path) == 0) {
+        // Change successful
+        update_environment_variables(); // Update environment variables like $PWD
+        return 0; // Return success
+    } else {
+        // Change failed
+        return -1; // Return failure
+    }
+}
+
+The chdir() function is a system call that actually changes the current working directory.
+------------------------------------------------------------------------------------------------
+
+ls Command:
+
+The ls command is used to list the contents of a directory.
+It displays the names of files and directories in the specified directory.
+Here's a simplified explanation of the ls command's functionality:
+
+void ls(const char *path) {
+    DIR *directory;
+    struct dirent *entry;
+    
+    directory = opendir(path);
+    if (directory != NULL) {
+        while ((entry = readdir(directory)) != NULL) {
+            printf("%s\n", entry->d_name);
+        }
+        closedir(directory);
+    } else {
+        perror("Error opening directory");
+    }
+}
+
+This code snippet uses functions like opendir(), readdir(), and closedir() 
+to open the directory, read its contents, and print their names.
+------------------------------------------------------------------------------------------
+>>CODE FOR AWK COMMAND:
+****AWK is a powerful programming language primarily used for text processing and 
+manipulation in Unix and Linux environments. It's often used for data extraction 
+and reporting. An AWK program consists of patterns and actions that are applied 
+to each line of input.
+
+Here's an example of a basic C program that replicates 
+a simple AWK-like functionality for printing the first and second fields 
+separated by a comma (similar to AWK's $1 and $2):
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("data.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    char line[100];
+    while (fgets(line, sizeof(line), file)) {
+        char *token;
+        int field_count = 0;
+
+        token = strtok(line, ",");
+        while (token != NULL) {
+            field_count++;
+            if (field_count == 1 || field_count == 2) {
+                printf("%s", token);
+                if (field_count == 1) {
+                    printf(",");
+                }
+            }
+            token = strtok(NULL, ",");
+        }
+        printf("\n");
+    }
+
+    fclose(file);
+    return 0;
+}
+
+Certainly! AWK itself is a powerful text-processing language, not directly implemented in C. However, if you want to create a program that replicates some functionality of AWK using C, you can build a simplified version to handle basic text processing tasks.
+
+Here's an example of a basic C program that replicates a simple AWK-like functionality for printing the first and second fields separated by a comma (similar to AWK's $1 and $2):
+
+c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("data.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    char line[100];
+    while (fgets(line, sizeof(line), file)) {
+        char *token;
+        int field_count = 0;
+
+        token = strtok(line, ",");
+        while (token != NULL) {
+            field_count++;
+            if (field_count == 1 || field_count == 2) {
+                printf("%s", token);
+                if (field_count == 1) {
+                    printf(",");
+                }
+            }
+            token = strtok(NULL, ",");
+        }
+        printf("\n");
+    }
+
+    fclose(file);
+    return 0;
+}
+This C program opens a file named data.txt, reads it line by line,
+ and then processes each line to extract the first and second fields separated by commas.
+
+Here's a breakdown of the code:
+
+It uses fgets() to read each line from the file.
+strtok() is used to split the line into tokens based on the comma delimiter.
+It keeps track of the field count and prints the first two fields separated by a comma.
+This C code is a basic example and doesn't cover all the functionalities or 
+complexities of AWK. AWK is a full-fledged scripting language optimized for text processing, 
